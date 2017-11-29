@@ -17,6 +17,7 @@ More information about it with (```--help```)
 
 ## Development
 
+- Numpy 1.13.3
 - Python 3.6
 - OpenCV 3.3.1
 
