@@ -3,7 +3,13 @@ from cfinderCV import ACircleFinder, Circle
 
 class TrackingCircleFinder(ACircleFinder):
 
-    def compute(self, image_input) -> Circle:
+    def __init__(self):
+        self.params = dict()
+
+    def init_params(self, params: dict):
+        self.params = params
+
+    def compute(self, image_input):
         # remove later
         print("compute image_input")
-        return Circle(100, 100, 10)
+        return None, Circle(100, 100, 10)
