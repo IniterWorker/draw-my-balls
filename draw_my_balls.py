@@ -15,8 +15,21 @@ def draw_circle(image, circle: Circle):
     cv2.circle(image, (circle.x, circle.y), 2, (0, 0, 255), 3)
 
 
+def draw_line(image, circle_a: Circle, circle_b: Circle, thickness: int):
+    cv2.line(image, (circle_a.x, circle_a.y), (circle_b.x, circle_b.y), (255, 0, 0), thickness)
+
+
 def draw_deque_circles(image, cache: deque):
+    init = False
+    circle_tmp = None
     for circle in cache:
+        if init is False:
+            init = True
+            circle_tmp = circle
+        else:
+            draw_line(image, circle, circle_tmp, circle.radius)
+            circle_tmp = circle
+        # draw circle over
         draw_circle(image, circle)
 
 
