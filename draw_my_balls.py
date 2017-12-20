@@ -7,6 +7,7 @@ from collections import deque
 from cfinderCV import CircleFinderFactory
 from cfinderCV import Circle
 
+
 def draw_circle(image, circle: Circle):
     # draw the outer circle
     cv2.circle(image, (circle.x, circle.y), circle.radius, (0, 255, 0), 2)
@@ -30,6 +31,15 @@ def draw_deque_circles(image, cache: deque):
             circle_tmp = circle
         # draw circle over
         draw_circle(image, circle)
+
+
+def str2bool(v):
+    if v.lower() in ('yes', 'true', 't', 'y', '1'):
+        return True
+    elif v.lower() in ('no', 'false', 'f', 'n', '0'):
+        return False
+    else:
+        raise argparse.ArgumentTypeError('Boolean value expected.')
 
 
 def use_video(args, pts):
@@ -66,11 +76,25 @@ def use_video(args, pts):
             # drawing deque
             draw_deque_circles(frame, pts)
 
-            cv2.imshow("Compute Video", frame if args["processing"] is False else processing)
+            # TODO : remove the if processing is None (compute time optimization)
+            cv2.imshow("Compute Video", frame if args["processing"] is False or processing is None else processing)
 
             key = cv2.waitKey(1) & 0xFF
 
+            if key == ord("b"):
+                circle_finder = CircleFinderFactory.create("Basic")
+                circle_finder.init_params(args)
+
+            if key == ord("t"):
+                circle_finder = CircleFinderFactory.create("Tracking")
+                circle_finder.init_params(args)
+
+            if key == ord("c"):
+                circle_finder = CircleFinderFactory.create("Colour")
+                circle_finder.init_params(args)
+
             # if the 'q' key is pressed, stop the loop
+
             if key == ord("q"):
                 break
 
@@ -111,7 +135,8 @@ if __name__ == '__main__':
                     default=[23, 86, 122])
     ap.add_argument("-u", "--upper", type=int, nargs=3, help="Custom palette lower (default=\"64 255 255\")",
                     default=[90, 255, 255])
-    ap.add_argument("-p", "--processing", type=bool, default=False, help="Display processing render")
+    ap.add_argument("-p", "--processing", type=str2bool, nargs='?',
+                    const=True, default=False, help="Display processing render")
 
     args = vars(ap.parse_args())
 
