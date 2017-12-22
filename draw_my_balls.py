@@ -126,7 +126,8 @@ def use_image(args, pts):
 if __name__ == '__main__':
     print("OpenCV version: " + cv2.__version__)
 
-    ap = argparse.ArgumentParser()
+    ap = argparse.ArgumentParser(description="Drawing with video stream and balls in OpenCV context.\n"
+                                             "You can switch in runtime with ['b', 't', 'c'] keys.")
     ap.add_argument("-i", "--image", help="Path to the image source")
     ap.add_argument("-b", "--buffer", type=int, default=64, help="Buffer size of vertex")
     ap.add_argument("-v", "--video", help="Path to the video source (device/filename)", default=1)
