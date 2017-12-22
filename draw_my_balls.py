@@ -71,7 +71,8 @@ def use_video(args, pts):
             processing, circle = circle_finder.compute(frame)
 
             # store circle
-            pts.appendleft(circle)
+            if circle.x > -1:
+                pts.appendleft(circle)
 
             # drawing deque
             draw_deque_circles(frame, pts)

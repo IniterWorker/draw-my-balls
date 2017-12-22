@@ -19,3 +19,15 @@ class Circle:
     @property
     def radius(self):
         return self._radius
+
+    @x.setter
+    def x(self, value):
+        self._x = value
+
+    @y.setter
+    def y(self, value):
+        self._y = value
+
+    @radius.setter
+    def radius(self, value):
+        self._radius = value
