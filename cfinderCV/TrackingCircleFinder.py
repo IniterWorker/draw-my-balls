@@ -15,7 +15,7 @@ class TrackingCircleFinder(ACircleFinder):
     def init_params(self, params: dict):
         self.params = params
       
-    def compute(self, image_input) -> Circle:
+    def compute(self, image_input):
         frame = image_input
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
         gray = cv2.GaussianBlur(gray, (25,25), 0)
