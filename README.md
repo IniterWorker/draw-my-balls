@@ -24,8 +24,8 @@ More information about it with (```--help```)
 ## Authors
 
 - [Walter Bonetti](https://github.com/IniterWorker)
-- [Mathilde Delmont](https://github.com/delmon-m)
-- [Natacha Drecourt](https://github.com/IniterWorker)
-- [Théo Da Silva](https://github.com/IniterWorker)
-- [Thomas](https://github.com/IniterWorker)
+- [Mathilde Delmon](https://github.com/delmon-m)
+- [Natacha Drecourt](https://github.com/Natkeely)
+- [Théo Da Silva](https://github.com/theodasilva)
+- [Thomas](https://github.com/)
 - [Benjamin Biv](https://github.com/Passtekounet)
