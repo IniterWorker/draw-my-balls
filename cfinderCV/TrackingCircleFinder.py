@@ -2,7 +2,6 @@ from cfinderCV import ACircleFinder, Circle
 
 import argparse
 import datetime
-import imutils
 import time
 import cv2
 
@@ -43,4 +42,4 @@ class TrackingCircleFinder(ACircleFinder):
                 cv2.circle(im2, (circle[0], circle[1]), circle[2], (255, 0, 0), 4)
                 return thresh, Circle(circle[0], circle[1], circle[2])
 
-        return thresh, None
+        return thresh, Circle(-1, -1, -1)
