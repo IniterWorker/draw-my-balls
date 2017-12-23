@@ -17,11 +17,15 @@ More information about it with (```--help```)
 
 ## Development
 
+- Numpy 1.13.3
 - Python 3.6
 - OpenCV 3.3.1
 
 ## Authors
 
 - [Walter Bonetti](https://github.com/IniterWorker)
-- [Mathilde Delmont](https://github.com/IniterWorker)
+- [Mathilde Delmont](https://github.com/delmon-m)
 - [Natacha Drecourt](https://github.com/IniterWorker)
+- [Théo Da Silva](https://github.com/IniterWorker)
+- [Thomas](https://github.com/IniterWorker)
+- [Benjamin Biv](https://github.com/Passtekounet)

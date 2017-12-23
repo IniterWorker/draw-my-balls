@@ -6,6 +6,10 @@ class ACircleFinder:
     __metaclass__ = ABCMeta
 
     @abstractmethod
-    def compute(self, image_input) -> Circle:
+    def init_params(self, params: dict):
+        raise NotImplementedError()
+
+    @abstractmethod
+    def compute(self, image_input):
         raise NotImplementedError()
 
